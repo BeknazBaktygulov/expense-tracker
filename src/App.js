@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Balance from "./components/Balance";
+import IncomeExpenses from "./components/IncomeExpenses";
+import TransactionList from "./components/TransactionList";
+import AddTransaction from "./components/AddTransaction";
+import "./App.css";
+import { GlobalProvider } from "./context/GlobalState";
 
-function App() {
+// Will learn:
+// 1. Local state vs Global state
+// 2. Prop drilling
+// 3. Lifting state up
+// 4. Context API vs Redux
+// 5. useContext React hook
+// 6. useReducer React hook
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalProvider>
+      <Header />
+      <div className="container">
+        <Balance />
+        <IncomeExpenses />
+        <TransactionList />
+        <AddTransaction />
+      </div>
+    </GlobalProvider>
   );
-}
+};
 
 export default App;
