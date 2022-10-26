@@ -33,6 +33,7 @@ export const GlobalProvider = ({ children }) => {
     // display whole number + 2 decimals so we use toFixed(2)
     // we want to add . between whole number and decimal
     let p = num.toFixed(2).split(".");
+    // test 23123
     return (
       "$ " +
       p[0]
